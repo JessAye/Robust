@@ -2,6 +2,7 @@ Documentation:
 Idk what to add here so I'm putting the comment block we are going to use 
 
 /*
+
 Author:
 
 Date:
@@ -13,4 +14,6 @@ Date Created:
 Date Last Modified:
 
 */
+
+Ignore the extra newlines
 # Robust
