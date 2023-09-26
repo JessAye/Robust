@@ -50,6 +50,15 @@ h1 {
 .game-link:hover {
     background-color: #003366; /* Change the background color on hover */
     border-radius: 5px; /* Add rounded corners */
+    animation: bounce 1s ease-in-out infinite alternate;
+}
+@keyframes bounce{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
 }
 
 /* Adjust the layout for smaller screens */
