@@ -1,14 +1,14 @@
 /* Reset some default styles for the body and header */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #000000;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #003366;
+    color: #FFD700;
     padding: 20px 0;
     text-align: center;
 }
@@ -32,10 +32,11 @@ h1 {
 .game-link {
     text-align: center;
     text-decoration: none;
-    color: #333; /* Text color */
+    color: #FFD700; /* Text color */
     font-size: 18px;
     margin: 10px; /* Margin adjustment */
     display: inline-block;
+    transition: background-color 0.3s, border-radius 0.3s; /* Add smooth transition */
 }
 
 /* Style the icons */
@@ -47,7 +48,7 @@ h1 {
 
 /* Add a hover effect */
 .game-link:hover {
-    background-color: #f0f0f0; /* Change the background color on hover */
+    background-color: #003366; /* Change the background color on hover */
     border-radius: 5px; /* Add rounded corners */
 }
 
