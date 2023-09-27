@@ -1,0 +1,45 @@
+
+/* Base styles for all screen sizes */
+
+/*-------Header and h1-------*/
+header {
+    background-color: #041E42; /* ETSU navy */   
+    color: #FFC72C; /* ETSU gold */
+    border: 50px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+/*-------Main and Body-------*/
+main {
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+body {
+    position: absolute;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 10px;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/*-------footer-------*/
+footer {
+    margin-left: -20px;
+    position: absolute;
+    width: 100%;
+    background-color: #041E42; /* ETSU navy */   
+    color: #FFC72C; /* ETSU gold */
+    text-align: center;
+}
