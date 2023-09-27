@@ -58,7 +58,7 @@ window.onload = function() {
     //load images for game
     //ship
     shipImg = new Image();
-    shipImg.src = ".Images/ship.png";
+    shipImg.src = "./Images/ship.png";
     shipImg.onload = function() {
         context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     }
