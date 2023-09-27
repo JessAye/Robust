@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Footer Example</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to external CSS file -->
+
+    <style>
+     
+
+       
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Your page content goes here -->
+        <h1>Welcome to My Website</h1>
+    </header>
+    
+    <main>
+        <!-- Main content of your website -->
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>       
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+        <p>This is the main content of your website.</p>
+    </main>
+    
+    <footer id="dynamic-footer">
+        <!-- Dynamic content will be inserted here -->
+    </footer>
+
+    <script>
+        // JavaScript code to update the dynamic content in the footer
+        const footer = document.getElementById('dynamic-footer');
+        const currentYear = new Date().getFullYear();
+        footer.innerHTML = `&copy; ${currentYear} My Website. All rights reserved.`;
+    </script>
+</body>
+</html>
