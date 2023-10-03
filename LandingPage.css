@@ -1,0 +1,85 @@
+/* Reset some default styles for the body and header */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2a2727;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    font-family: "Press Start 2P";
+    background-color: #003366;
+    color: #FFD700;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+/* Apply styles to the overall container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(20% - 20px), 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Add some basic styling to the game links */
+.game-link {
+    text-align: center;
+    text-decoration: none;
+    color: #FFD700; /* Text color */
+    font-size: 18px;
+    margin: 10px; /* Margin adjustment */
+    display: inline-block;
+    transition: background-color 0.3s, border-radius 0.3s; /* Add smooth transition */
+}
+
+/* Style the icons */
+.game-link img {
+    width: 64px; /* Adjust the width and height as needed */
+    height: 64px;
+    margin-bottom: 5px; /* Add some spacing between the icon and text */
+}
+
+/* Add a hover effect */
+.game-link:hover {
+    background-color: #003366; /* Change the background color on hover */
+    border-radius: 5px; /* Add rounded corners */
+    animation: bounce 1s ease-in-out infinite alternate;
+}
+@keyframes bounce{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}
+
+/* Adjust the layout for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}
+
+/* Style for the default development icon */
+.game-link img[src="default-icon.png"] {
+    width: 128px; /* Adjust the width as needed */
+    height: 128px; /* Adjust the height as needed */
+    background-color: #ccc; /* Background color for the placeholder */
+    border: 2px solid #666; /* Border for the placeholder */
+}
+
+/* Style the game name */
+.game-name {
+    font-size: 16px; /* Adjust the font size as needed */
+    margin-top: 5px; /* Add space between the icon and game name */
+    text-align: center;
+}
