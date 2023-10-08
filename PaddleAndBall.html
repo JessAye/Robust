@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Paddle and Ball</title>
+    <style>
+      canvas {
+        background-color: #000;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+    <script>
+      const canvas = document.getElementById("gameCanvas");
+      const ctx = canvas.getContext("2d");
+
+      const paddleWidth = 10;
+      const paddleHeight = 80;
+      const ballSize = 10;
+
+      let playerY = (canvas.height - paddleHeight) / 2;
+      let aiY = (canvas.height - paddleHeight) / 2;
+      let playerSpeed = 5;  
+      let ballX = canvas.width / 2;
+      let ballY = canvas.height / 2;
+      let ballSpeedX = 5;
+      let ballSpeedY = 5;
+      let aiPaddleOffset = 35; // How far from the center the ball will hit the AI's paddle
+      let upPressed = false;
+      let downPressed = false;
+      let playerScore = 0;
+      let aiScore = 0;
+
+      function drawRect(x, y, width, height, color) {
+        ctx.fillStyle = color;
+        ctx.fillRect(x, y, width, height);
+      }
+
+      function drawCircle(x, y, radius, color) {
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fill();
+      }
+
+      function drawText(text, x, y, color, size) {
+        ctx.fillStyle = color;
+        ctx.font = size + "px Arial";
+        ctx.fillText(text, x, y);
+      }
+
+      // Main game loop
+      function draw() {
+        // Clear the canvas
+        drawRect(0, 0, canvas.width, canvas.height, "#000");
+
+        // Draw the paddles and ball
+        drawRect(0, playerY, paddleWidth, paddleHeight, "#1B03A3"); // drawRect(x, y, width, height, color) 
+        drawRect(canvas.width - paddleWidth, aiY, paddleWidth, paddleHeight, "#FF3131");
+        drawCircle(ballX, ballY, ballSize, "#FFFFFF"); // (x, y, radius, color) 
+
+        // Draw the scores
+        drawText(playerScore.toString(), 100, 50, "#1B03A3", 50);
+        drawText(aiScore.toString(), canvas.width - 150, 50, "#FF3131", 50); //(text, x, y, color, size)
+
+
+        // Move the ball
+        ballX += ballSpeedX;
+        ballY += ballSpeedY;
+
+        // Ball collision with top and bottom walls
+        if (ballY - ballSize < 0 || ballY + ballSize > canvas.height) {
+          ballSpeedY = -ballSpeedY;
+        }
+
+        // Ball collision with paddles
+        if (
+          (ballX - ballSize < paddleWidth &&
+            ballY > playerY &&
+            ballY < playerY + paddleHeight) ||
+          (ballX + ballSize > canvas.width - paddleWidth &&
+            ballY > aiY &&
+            ballY < aiY + paddleHeight)
+        ) {
+          ballSpeedX = -ballSpeedX;
+        }
+
+        // Ball out of bounds
+        if (ballX < 0) {
+          // AI scores a point
+          aiScore++;
+          resetBall();
+        } else if (ballX > canvas.width) {
+          // Player scores a point
+          playerScore++;
+          resetBall();
+        }
+
+        // Generate a random integer between min (inclusive) and max (inclusive)
+
+        function randInt(min, max) {
+          min = Math.ceil(min);
+          max = Math.floor(max);
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // AI control
+        // Tweak aiPaddleOffset and speed to adjust difficulty
+        const aiCenter = aiY + paddleHeight / 2;
+        if (aiCenter < ballY - aiPaddleOffset) { // Offsetting the ball gives the player a chance to score
+          aiY += randInt(6, 10);
+        } else if (aiCenter > ballY + aiPaddleOffset) {
+          aiY -= randInt(6,10); //ai random speeds help with difficulty
+        }
+        requestAnimationFrame(draw);
+      }
+
+      function resetBall() {
+        ballX = canvas.width / 2;
+        ballY = canvas.height / 2;
+        ballSpeedX = -ballSpeedX; // Go the opposite direction
+        aiCanMove = false; // Reset AI movement flag
+      }
+
+
+      document.addEventListener("mousemove", (e) => {
+        const mouseY = e.clientY - canvas.getBoundingClientRect().top;
+        playerY = mouseY - paddleHeight / 2;
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "w" || e.key == "ArrowUp") {
+          upPressed = true;
+        } else if (e.key === "s" || e.key == "ArrowDown") {
+          downPressed = true;
+        }
+      });
+
+      document.addEventListener("keyup", (e) => {
+        if (e.key === 'w' || e.key == "ArrowUp") {
+          upPressed = false;
+        } else if (e.key === "s" || e.key == "ArrowDown") {
+          downPressed = false;
+        }
+      });
+
+      // Update player position with smoother and faster movement
+      function updatePlayerPosition() {
+        if (upPressed && playerY > 0) {
+          playerY -= playerSpeed;
+        }
+        if (downPressed && playerY < canvas.height - paddleHeight) {
+          playerY += playerSpeed;
+        }
+        setTimeout(updatePlayerPosition, 10);
+      }
+
+      draw();
+      updatePlayerPosition();
+    </script>
+  </body>
+</html>
+
+// Components generated by ChatGPT
