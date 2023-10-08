@@ -38,6 +38,7 @@ h1 {
     margin: 10px; /* Margin adjustment */
     display: inline-block;
     transition: background-color 0.3s, border-radius 0.3s; /* Add smooth transition */
+    overflow: hidden; /* Hide overflowing content */
 }
 
 /* Style the icons */
@@ -49,7 +50,7 @@ h1 {
 
 /* Add a hover effect */
 .game-link:hover {
-    background-color: #003366; /* Change the background color on hover */
+    /*background-color: #003366;*/ /* Change the background color on hover */
     border-radius: 5px; /* Add rounded corners */
     animation: bounce 1s ease-in-out infinite alternate;
 }
@@ -61,6 +62,11 @@ h1 {
     100%{
         transform: translateY(-10px);
     }
+}
+
+/* Hover effect without background color change */
+.game-link:not(.clicked):hover {
+    background-color: #003366;
 }
 
 /* Clicked effect with slow expansion animation */
