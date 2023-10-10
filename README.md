@@ -53,11 +53,3 @@ Ignore the extra newlines
 --------------------------------------------------------------------------------------
 [Your Description of your feature and what it does/how it works goes here]
 
-
-
-Branch targeting Test
-
-Fork Destroyed, Rebuild using personal devbranch
-
-
-Gutu Local Clone Second Test
