@@ -58,6 +58,3 @@ Ignore the extra newlines
 Branch targeting Test
 
 Fork Destroyed, Rebuild using personal devbranch
-
-
-Gutu Local Clone Second Test
