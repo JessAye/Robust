@@ -1,0 +1,38 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - Sprint_2_Product
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USERNAME }}
+        key: ${{ secrets.EC2_SSH_KEY }}
+        port: 22
+        script: |
+          # Change to your GitHub directory on the EC2 instance
+          cd ~/Robust
+
+          # Update your GitHub repository on the EC2 instance
+          git fetch
+          git reset --hard
+          git checkout origin/Sprint_2_Product
+
+          # Use Docker Compose to manage your website container
+          sudo docker-compose -f docker-compose.yml up -d --build
+
+      env:
+        EC2_HOST: ${{ secrets.EC2_HOST }}
+        EC2_USERNAME: ${{ secrets.EC2_USERNAME }}
+        EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
