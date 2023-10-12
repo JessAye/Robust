@@ -1,5 +1,6 @@
 /* Reset some default styles for the body and header */
-body {
+body 
+{
     font-family: Arial, sans-serif;
     background-color: #2a2727;
     margin: 0;
