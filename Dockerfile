@@ -5,7 +5,7 @@ FROM nginx:latest
 WORKDIR /usr/share/nginx/html
 
 # Copy the content of your Sprint 1 Product folder into the image
-COPY ./Sprint_2_Dev/ .
+COPY ./Sprint_2_Product/ .
 
 # Replace the default NGINX configuration with your custom configuration
 COPY nginx.conf /etc/nginx/nginx.conf
