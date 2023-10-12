@@ -5,37 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Robust Games - Online Arcade</title>
     <link rel="stylesheet" type ="text/css" href="SpaceInvaders.css">
-    <script src="SpaceInvaders.js">    // JavaScript code for the Space Invaders game</script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
     </style>
 </head>
-<!---------------Transition-Container----------->
-<div class="transition-container">
-    <div class="transition-content">
-            <img src="Images/alienGreen.png" alt="Game 1">
-            <div class="game-name">Cosmic Clash</div>
-            <div class="Back Button"><a href="LandingPage.html" title="Return to landing Page">(Back To Games)</a></div>
-    </div>
-</div>
 <body>
     <!-------------------Header------------------>
     <header>
     <h1>Cosmic Clash</h1>
     </header>
-    <div class="transition-container">
+    <!-------------------Transition-------------->
+    <!--<div class="transition-container">
         <div class="transition-content">
-            <img src="Images/alienGreen.png" alt="Game 1">
-            <div class="game-name">Cosmic Clash</div>
-            <div class="Back Button"><a href="LandingPage.html" title="Return to landing Page">(Back To Games)</a></div>
+            <a href="LandingPage.html" title="Return to landing Page">
+                <img src="Images/alienGreen.png" alt="Game 1">
+                <div class="game-name">Cosmic Clash</div>
+            </a>
         </div>
-    </div>
+    </div> --> 
+
     <!-------------------Main------------------>
     <main class="gameboy">
         <div class="gameboy-body">
             <div class="gameboy-header"></div>
             <section class="screen">
+            <div id="startMenu">
+                <h1>Cosmic Clash</h1>
+                <button id="startButton">Start Game</button>
+            </div>
             <canvas id="board"></canvas>
+            <div id="endMenu">
+                <h1>Game Over</h1>
+                <p>Player Score: <span id="finalPlayerScore">0</span></p>
+                <button id="playAgainButton">Play Again</button>
+            </div>
             </section>
             <section class="actions">
                 <!-- Directional buttons -->
@@ -55,7 +59,7 @@
         <section class ="description">
             <h2>Game Description</h2>
             <p>
-                Space Invaders is a classic arcade game in which you need to shoot down all the aliens. This HTML5 version is inspired by the game from Taito.
+                Cosmic Clash is a classic arcade game in which you need to shoot down all the aliens. This HTML5 version is inspired by the game from Taito.
             </p>
         </section>
 
@@ -71,11 +75,12 @@
             </ul>
         </section>
     </main>
-
+    
     <!-------------------Footer------------------>
     <footer>
         <p>&copy; 2023 Game Website </p>
     </footer>
+    <script src="SpaceInvaders.js"></script>
 </body>
 </html>
 
