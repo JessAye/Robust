@@ -4,27 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robust Arcade</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="LandingPage.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Robust Arcade</h1>
-    </header>
-    <div class="container">
-        <a class="game-link" href="game1.html">
-            <img src="Images/default_icon.png" alt="Game 1">
-            <div class="game-name">Game 1</div>
-        </a>
-        <a class="game-link" href="game2.html">
-            <img src="Images/default_icon.png" alt="Game 2">
-            <div class="game-name">Game 2</div>
-        </a>
-        <a class="game-link" href="game3.html">
-            <img src="Images/default_icon.png" alt="Game 3">
-            <div class="game-name">Game 3</div>
-        </a>
-        <!-- Add more game links as needed -->
-        <!-- These Link to your game pages change the name of the game1,2,3,etc. to your games gameshtml page, the default icon is just a default icon in the images folder, change it to what your icon should be -->
-    </div>
+<header>
+    <h1>Robust Arcade</h1>
+</header>
+<div class="container">
+    <a class="game-link" href="SpaceInvaders.html" title="Cosmic Clash" onclick="expandAndRedirect(this, event)">
+        <img src="Images/alienGreen.png" alt="Cosmic Clash">
+        <div class="game-name">Cosmic Clash</div>
+    </a>
+    <a class="game-link" href="PaddleBall.html" title="PaddleAndBall" onclick="expandAndRedirect(this, event)">
+        <img src="Images/PaddleBall.png" alt="PaddleAndBall">
+        <div class="game-name">Paddle and Ball</div>
+    </a>
+    <a class="game-link" href="under_construction.html" title="Under Construction"onclick="expandAndRedirect(this, event)">
+        <img src="Images/default_icon.png" alt="Under Construction">
+        <div class="game-name">Game 3</div>
+    </a>
+    <a class="game-link" href="under_construction.html" title="Under Construction"onclick="expandAndRedirect(this, event)">
+        <img src="Images/default_icon.png" alt="Under Construction">
+        <div class="game-name">Game 4</div>
+    </a>
+    <a class="game-link" href="under_construction.html" title="Under Construction"onclick="expandAndRedirect(this, event)">
+        <img src="Images/default_icon.png" alt="Under Construction">
+        <div class="game-name">Game 5</div>
+    </a>
+    <a class="game-link" href="under_construction.html" title="Under Construction"onclick="expandAndRedirect(this, event)">
+        <img src="Images/default_icon.png" alt="Under Construction">
+        <div class="game-name">Game 6</div>
+    </a>
+    <a class="game-link" href="under_construction.html" title="Under Construction"onclick="expandAndRedirect(this, event)">
+        <img src="Images/default_icon.png" alt="Under Construction">
+        <div class="game-name">Game 7</div>
+    </a>
+    <!-- Add more game links as needed -->
+    <!-- These Link to your game pages change the name of the game1,2,3,etc. to your games gameshtml page, the default icon is just a default icon in the images folder, change it to what your icon should be -->
+</div>
+
+<script>
+    function expandAndRedirect(link, event) {
+        event.preventDefault(); // Prevent the default link behavior
+        link.classList.add('clicked');
+        setTimeout(function () {
+            // Redirect to another page after the animation finishes
+            window.location.href = link.getAttribute('href');
+        }, 2000); //timeout duration in milliseconds
+    }
+</script>
 </body>
 </html>
