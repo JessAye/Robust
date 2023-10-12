@@ -16,17 +16,17 @@ const finalAiPlayerScore = document.getElementById("finalAiPlayerScore");
 // Movement
 let playerY = (canvas.height - paddleHeight) / 2; // Paddle positions
 let aiY = (canvas.height - paddleHeight) / 2;
-let playerSpeed = 5;
+let playerSpeed = 1;
 let ballX = canvas.width / 2; //Ball position
 let ballY = canvas.height / 2;
 let ballSpeedX = 1; // Ball's vertical speed
 let ballSpeedY = 1; // Ball's horizontal speed
-let aiPaddleOffset = 20; // Distance from center of AI's paddle where the ball hits
+let aiPaddleOffset = 18; // Distance from center of AI's paddle where the ball hits
 let upPressed = false; // Keyboard controls are pressed
 let downPressed = false;
 let playerScore = 0;
 let aiScore = 0;
-const winScore = 5;
+const winScore = 3;
 let gameLoopId; // Variable for resetting the game loop after score is reached
 // Generate a random integer used for AI difficulty
 function randInt(min, max) {
@@ -59,7 +59,7 @@ function resetBall() {
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
     ballSpeedX = -ballSpeedX; // Go the opposite direction
-    aiCanMove = false; // Reset AI movement flag
+    aiCanMove = false; // Reset AI movement flag   
 }
 // Update player position with smoother and faster movement
 function updatePlayerPosition() {
@@ -77,9 +77,9 @@ function gameLoop() {
     // Clear the canvas
     drawRect(0, 0, canvas.width, canvas.height, "#000");
     // Draw the paddles and ball
-    drawRect(0, playerY, paddleWidth, paddleHeight, "#1B03A3"); // drawRect(x, y, width, height, color)
+    drawRect(0, playerY, paddleWidth, paddleHeight, "#1B03A3"); // drawRect(x, y, width, height, color) 
     drawRect(canvas.width - paddleWidth, aiY, paddleWidth, paddleHeight, "#FF3131");
-    drawCircle(ballX, ballY, ballSize, "#FFFFFF"); // (x, y, radius, color)
+    drawCircle(ballX, ballY, ballSize, "#FFFFFF"); // (x, y, radius, color) 
     // Draw the scores
     drawText(playerScore.toString(), 100, 50, "#1B03A3", 30);
     drawText(aiScore.toString(), canvas.width - 150, 50, "#FF3131", 30); //(text, x, y, color, size)
@@ -96,14 +96,14 @@ function gameLoop() {
             ballSpeedX = -ballSpeedX;
         }
         // Ball out of bounds
-        if (ballX < 0) {
+        if (ballX < 0) {          
             aiScore++; // AI scores a point
             resetBall();
             delay();
 
-        } else if (ballX > canvas.width) {
+        } else if (ballX > canvas.width) {          
             playerScore++; // Player scores a point
-            resetBall();
+            resetBall();          
         }
         // Check if either player has reached the winning score
         if (playerScore >= winScore || aiScore >= winScore) {
@@ -117,19 +117,74 @@ function gameLoop() {
     //   playerY = mouseY - paddleHeight / 2;
     // });
 
+    
+    const arrowTopButton = document.getElementById("arrow-top");
+    const arrowBottomButton = document.getElementById("arrow-bottom");
+    
+    // Clicking buttons control
+    // Add event listeners to the "arrow-top" and "arrow-bottom" buttons
+    document.getElementById("arrow-top").addEventListener("mousedown", () => {
+        upPressed = true;
+    });
+
+    document.getElementById("arrow-bottom").addEventListener("mousedown", () => {
+        downPressed = true;
+    });
+
+    // Add event listeners to stop movement when buttons are released
+    document.getElementById("arrow-top").addEventListener("mouseup", () => {
+        upPressed = false;
+    });
+
+    document.getElementById("arrow-bottom").addEventListener("mouseup", () => {
+        downPressed = false;
+    });
+
+    // Add event listeners to stop movement when buttons are no longer hovered
+    document.getElementById("arrow-top").addEventListener("mouseout", () => {
+        upPressed = false;
+    });
+
+    document.getElementById("arrow-bottom").addEventListener("mouseout", () => {
+        downPressed = false;
+    });
+
+    // Directional pad buttons control for mobile users
+    arrowTopButton.addEventListener("touchstart", (e) => {
+        upPressed = true;
+        e.preventDefault(); // Prevent the default behavior (scrolling or zooming)
+    });
+
+    arrowTopButton.addEventListener("touchend", () => {
+        upPressed = false;
+    });
+
+    arrowBottomButton.addEventListener("touchstart", (e) => {
+        downPressed = true;
+        e.preventDefault(); // Prevent the default behavior (scrolling or zooming)
+    });
+
+    arrowBottomButton.addEventListener("touchend", () => {
+        downPressed = false;
+    });
+
     // W, S, arrow up,  arrow down controls
     document.addEventListener("keydown", (e) => {
         if (e.key === "w" || e.key == "ArrowUp") {
             upPressed = true;
+            e.preventDefault(); // Prevent the default behavior (scrolling)
         } else if (e.key === "s" || e.key == "ArrowDown") {
             downPressed = true;
+            e.preventDefault(); // Prevent the default behavior (scrolling)
         }
     });
     document.addEventListener("keyup", (e) => {
         if (e.key === 'w' || e.key == "ArrowUp") {
             upPressed = false;
+            e.preventDefault(); // Prevent the default behavior (scrolling)
         } else if (e.key === "s" || e.key == "ArrowDown") {
             downPressed = false;
+            e.preventDefault(); // Prevent the default behavior (scrolling)
         }
     });
     // AI control
