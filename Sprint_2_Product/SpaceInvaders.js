@@ -9,6 +9,7 @@ let boardHeight = tileSize * rows; //32 * 16
 let context; 
 let flag = 0;
 
+
 //ship
 let shipWidth = tileSize * 2;
 let shipHeight = tileSize;
@@ -43,11 +44,13 @@ let bulletArray = [];
 let bulletVelocityY = -10; //bullet moving speed
 
 //score
+const playerScore = document.getElementById("finalPlayerScore");
 let score = 0;
 
 //Game Over flag
 let gameOver = false;
 
+let gameActive = false;
 
 window.onload = function() {
     board = document.getElementById("board");
@@ -55,6 +58,21 @@ window.onload = function() {
     board.height = boardHeight;
     context = board.getContext("2d"); 
 
+    // Get the menu elements
+    const startMenu = document.getElementById("startMenu");
+    const endMenu = document.getElementById("endMenu");
+    // Get the buttons in the menus
+    const startButton = document.getElementById("startButton");
+    const playAgainButton = document.getElementById("playAgainButton");
+
+    // Add event listeners to show the menus
+    startButton.addEventListener("click", startGame);
+    playAgainButton.addEventListener("click", restartGame);
+
+    board.style.display = "none";
+    endMenu.style.display = "none";
+
+    
     //initial ship
     //context.fillStyle="green";
     //context.fillRect(ship.x, ship.y, ship.width, ship.height);
@@ -72,7 +90,42 @@ window.onload = function() {
     alienImg.src = "./Images/alienGreen.png";
     createAliens();
 
-    requestAnimationFrame(update);
+    // Function to start the game
+    function startGame() {
+        startMenu.style.display = "none";
+        board.style.display = "block";
+        gameActive = true;
+        resetGame();
+        requestAnimationFrame(update);
+        // Add any additional game initialization logic here
+    }
+
+    // Function to reset the game
+    function resetGame() {
+        ship.x = shipX;
+        ship.y = shipY;
+        alienVelocityX = 0.5;
+        alienRows = 2;
+        alienColumns = 3;
+        alienCount = 0;
+        alienArray = [];
+        bulletArray = [];
+        createAliens();
+        score = 0;
+        gameOver = false;
+    }
+
+    // Function to restart the game
+    function restartGame() {
+        endMenu.style.display = "none";
+        board.style.display = "block";
+        gameActive = true;
+        resetGame();
+        requestAnimationFrame(update);
+        // Reset game variables and start a new game
+        // Then, call the startGame function to begin a new game.
+    }
+
     // Add event listeners for the "click" and "touchstart" events on the "arrow-left" and "arrow-right" buttons
     const gameLeftButton = document.getElementById("arrow-left");
     const gameRightButton = document.getElementById("arrow-right");
@@ -124,11 +177,10 @@ window.onload = function() {
 }
 
 function update() {
-    
+    const endMenu = document.getElementById("endMenu");
     requestAnimationFrame(update);
-    if (flag == 1) {
-        alert("Game Over");
-        flag = 0;
+    if (!gameActive) {
+
         return;
     }
     if (gameOver) { 
@@ -162,7 +214,9 @@ function update() {
 
             if (alien.y >= ship.y) {
                 gameOver = true;    
-                flag = 1; 
+                gameActive = false;
+                board.style.display = "none";
+                endMenu.style.display = "block";
             }
         }
     }
@@ -208,7 +262,7 @@ function update() {
     context.fillStyle="white";
     context.font="48px courier";
     context.fillText(score, 5, 35);
-
+    playerScore.textContent = score;
 }
 
 //Function to move ship with keyboard controls
@@ -225,14 +279,14 @@ function moveShip(e) {
     }
 }
 
-//Funtion to move ship left with the left D-pad
+//Function to move ship left with the left D-pad
 function moveShipLeft() {
     if (!gameOver && ship.x - shipVelocityX >= 0) {
         ship.x -= shipVelocityX; // Move the ship left
     }
 }
 
-//Funtion to move ship right with the right D-pad
+//Function to move ship right with the right D-pad
 function moveShipRight() {
     if (!gameOver && ship.x + shipVelocityX + shipWidth <= boardWidth) {
         ship.x += shipVelocityX; // Move the ship right
