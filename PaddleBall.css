@@ -1,0 +1,383 @@
+/* COLORS */
+:root {
+    --dark: #2a2727;
+    --light-gray: #aaaaaa;
+    --stroke: #522438;
+    --green: #C2E688;
+    --red: #FC6963;
+    --light-brow: #846662;
+    --gray: #9EA1AF;
+  }
+  
+  /*--------------Header and h1------------*/
+  header {
+    font-family: "Press Start 2P";
+    background-color: #003366;
+    color: #FFD700;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  h1 {
+  font-family: "Press Start 2P";
+  font-size: 36px;
+  }
+  
+  /*--------------Main and Body------------*/
+  main {
+    padding: 20px;
+    padding-bottom: 60px;
+  }
+  
+  body {
+    position: relative;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #fff;
+    background-color: var(--dark); 
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  .instructions li {
+    font-size: 18px;
+    text-align: left;
+    margin: 10px;
+  }
+  
+  /*---------------- Footer --------------*/
+  footer {
+    font-family: "Press Start 2P";
+    background-color: #003366;
+    color: #FFD700;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: -10px;
+    
+  }
+  
+  /*-------------------------- GAME BOY ----------------------*/
+  /* RESET */
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+  
+  button {
+    outline: 0 !important;
+    cursor: pointer;
+  }
+  
+  button:focus {
+    box-shadow: inset 0 0 !important;
+  }
+  
+  /* Gameboy Container */
+  .gameboy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* Gameboy Body */
+  .gameboy-body {
+    margin: auto;
+    background-color: var(--light-gray);
+    width: 320px;
+    height: 590px;
+    border-radius: 20px 20px 50px;
+    border: 6px solid var(--stroke);
+    box-shadow: inset 10px 0 rgba(255, 255, 255, 0.7), inset -10px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  /* Gameboy Header */
+  .gameboy-header {
+    width: 100%;
+    height: 36px;
+    border-bottom: 6px solid var(--stroke);
+    position: relative;
+    box-shadow: 0 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .gameboy-header:after, .gameboy-header:before {
+    content: "";
+    height: 100%;
+    width: 6px;
+    background-color: var(--stroke);
+    position: absolute;
+  }
+  
+  .gameboy-header:before {
+    left: 30px;
+  }
+  
+  .gameboy-header:after {
+    right: 30px;
+  }
+  
+  /* Gameboy Screen */
+  .screen {
+    width: 270px;
+    background-color: var(--light-brow);
+    margin: 30px 0 0 20px;
+    border: 6px solid var(--stroke);
+    padding: 30px 30px 10px 30px;
+    border-radius: 10px 10px 25px;
+    position: relative;
+  }
+  
+  #gameCanvas {
+    background-color: black;
+  }
+
+  .screen #startMenu, #endMenu {
+    width: 125%;
+    height: 247.5px;
+    background-color: black;
+    border: 6px solid var(--stroke);
+    box-shadow: inset 6px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    margin-left: -25px;
+  }
+  
+  #startMenu h1, #endMenu h1 {
+    color: white;
+    line-height: 1.5;
+    font-size: 24px;
+  }
+
+  #endMenu p {
+    font-family: "Press Start 2P";
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  #endMenu #finalPlayerScore, #finalAiPlayerScore {
+    color: white;
+    background-color: black;
+    font-size: 10px;
+    font-family: "Press Start 2P";
+    border-radius: 0%;
+    border: none;
+    position: relative;
+  }
+
+  #startButton, #playAgainButton {
+    background-color: #003366;
+    color: white;
+    font-size: 15px;
+    font-family: "Press Start 2P";
+    padding: 10px 20px;
+    border: 0.5px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  .screen canvas {
+    width: 125%;
+    height: 247.5px;
+    background-color: var(--green);
+    border: 6px solid var(--stroke);
+    box-shadow: inset 6px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    margin-left: -25px;
+  }
+  
+  /* Gameboy Screen Dots */
+  .screen span {
+    width: 10px;
+    height: 10px;
+    background-color: var(--red);
+    position: absolute;
+    left: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--stroke);
+    top: 50%;
+    margin-top: -10px;
+  }
+  
+  .screen:after, .screen:before {
+    content: "";
+    height: 3px;
+    position: absolute;
+    top: 12px;
+    background-color: var(--stroke);
+  }
+  
+  .screen:before {
+    width: 100px;
+    left: 10px;
+  }
+  
+  .screen:after {
+    width: 30px;
+    right: 10px;
+  }
+  
+  /* Gameboy Actions Container */
+  .actions {
+    padding: 30px 14px 0;
+  }
+  
+  /* Gameboy Directions */
+  #directions {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid var(--stroke);
+    background-color: var(--gray);
+    position: relative;
+    display: flex;
+    float: left;
+    margin: -5px 0 0 5px;
+  } 
+  
+  #directions button {
+    border: 6px solid var(--stroke);
+    background-color: var(--light-brow);
+    width: 41px;
+    height: 40px;
+    position: absolute;
+    z-index: 9;
+  }
+  
+  #directions #arrow-left {
+    border-right: none !important;
+    box-shadow: inset 0 4px #fff, inset 0 -4px rgba(0, 0, 0, 0.2);
+    top: 50%;
+    margin-top: -18px;
+    left: 5px;
+    width: 48px;
+  }
+  
+  #directions #arrow-top {
+    border-bottom: none !important;
+    box-shadow: inset 0 4px #fff;
+    left: 50%;
+    margin-left: -20px;
+    top: 5px;
+    height: 51px;
+  }
+  
+  #directions #arrow-right {
+    border-left: none !important;
+    box-shadow: inset 0 4px #fff, inset 0 -4px rgba(0, 0, 0, 0.2);
+    top: 50%;
+    margin-top: -18px;
+    right: 5px;
+    width: 48px;
+  }
+  
+  #directions #arrow-bottom {
+    border-top: none !important;
+    box-shadow: inset 0 -4px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    margin-left: -20px;
+    bottom: 5px;
+    height: 48px;
+  }
+  
+  #directions:after {
+    content: "";
+    width: 38px;
+    height: 33px;
+    background-color: var(--light-brow);
+    position: relative;
+    top: 50%;
+    left: 47%;
+    margin: -15px;
+    z-index: 1;
+  }
+  
+  /* Gameboy Buttons Container */
+  #buttons {
+    border: 6px solid var(--stroke);
+    padding: 8px 3px;
+    background-color: var(--gray);
+    border-radius: 100px;
+    float: right;
+    position: relative;
+    transform: rotate(0deg);
+    top: 30px;
+    margin-right: 20px;
+  } 
+  
+  /* Gameboy Buttons */
+  #buttons button {
+    background-color: var(--red);
+    border: 6px solid var(--stroke);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    box-shadow: inset 4px 0 rgba(255, 255, 255, 0.7), inset -4px 0 rgba(0, 0, 0, 0.2);
+    margin: 0px 5px;
+  }
+  .transition-container {
+    position: fixed;
+    top: 0;
+
+    background-color: #003366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; /* Minecraft Z cordinate but for gui */
+    opacity: 1;
+     animation: despan 1s;
+     animation-fill-mode: forwards;
+  }
+
+  /* Define a keyframe animation for the expansion */
+  @keyframes despan {
+      0% {
+          right: 20px;
+          top: 0;
+          width: 100%;
+          height: 100%;
+
+      }
+      100% {
+
+        right: 45%;
+        width: 128px;
+        height: 128px;
+        align-items: center;
+      }
+  }
+  /* Add styles for the transition content (icon) */
+
+
+  /* Hide the transition container and content initially */
+
+
+  /* Style the icon within the transition content */
+  .transition-content img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 5px;
+  }
+  
+
+
+
+
