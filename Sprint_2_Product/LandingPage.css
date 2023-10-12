@@ -1,4 +1,5 @@
 /* Reset some default styles for the body and header */
+
 body 
 {
     font-family: Arial, sans-serif;
@@ -7,7 +8,8 @@ body
     padding: 0;
 }
 
-header {
+header 
+{
     font-family: "Press Start 2P";
     background-color: #003366;
     color: #FFD700;
@@ -15,12 +17,14 @@ header {
     text-align: center;
 }
 
-h1 {
+h1 
+{
     font-size: 36px;
 }
 
 /* Apply styles to the overall container */
-.container {
+.container 
+{
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -31,7 +35,8 @@ h1 {
 }
 
 /* Add some basic styling to the game links */
-.game-link {
+.game-link 
+{
     text-align: center;
     text-decoration: none;
     color: #FFD700; /* Text color */
@@ -43,20 +48,23 @@ h1 {
 }
 
 /* Style the icons */
-.game-link img {
+.game-link img 
+{
     width: 64px; /* Adjust the width and height as needed */
     height: 64px;
     margin-bottom: 5px; /* Add some spacing between the icon and text */
 }
 
 /* Add a hover effect */
-.game-link:hover {
+.game-link:hover 
+{
     /*background-color: #003366;*/ /* Change the background color on hover */
     border-radius: 5px; /* Add rounded corners */
     animation: bounce 1s ease-in-out infinite alternate;
 }
 /*Bouncy Icon effect*/
-@keyframes bounce{
+@keyframes bounce
+{
     0%{
         transform: translateY(0);
     }
@@ -66,12 +74,14 @@ h1 {
 }
 
 /* Hover effect without background color change */
-.game-link:not(.clicked):hover {
+.game-link:not(.clicked):hover 
+{
     background-color: #003366;
 }
 
 /* Clicked effect with slow expansion animation */
-.game-link.clicked {
+.game-link.clicked 
+{
     background-color: #003366;
     position: fixed;
     top: 50%;
@@ -85,7 +95,8 @@ h1 {
 }
 
 /* Define a keyframe animation for the expansion */
-@keyframes expand {
+@keyframes expand 
+{
     0% {
         width: 128px;
         height: 64px;
@@ -97,14 +108,16 @@ h1 {
 }
 
 /* Adjust the layout for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 768px) 
+{
     .container {
         padding: 10px; /* Reduce padding for smaller screens */
     }
 }
 
 /* Style for the default development icon */
-.game-link img[src="default-icon.png"] {
+.game-link img[src="default-icon.png"] 
+{
     width: 128px; /* Adjust the width as needed */
     height: 128px; /* Adjust the height as needed */
     background-color: #ccc; /* Background color for the placeholder */
@@ -112,7 +125,8 @@ h1 {
 }
 
 /* Style the game name */
-.game-name {
+.game-name 
+{
     font-size: 16px; /* Adjust the font size as needed */
     margin-top: 5px; /* Add space between the icon and game name */
     text-align: center;
