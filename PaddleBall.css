@@ -332,7 +332,50 @@
     padding: 10px;
     box-shadow: inset 4px 0 rgba(255, 255, 255, 0.7), inset -4px 0 rgba(0, 0, 0, 0.2);
     margin: 0px 5px;
-  } 
+  }
+  .transition-container {
+    position: fixed;
+    top: 0;
+
+    background-color: #003366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; /* Minecraft Z cordinate but for gui */
+    opacity: 1;
+     animation: despan 1s;
+     animation-fill-mode: forwards;
+  }
+
+  /* Define a keyframe animation for the expansion */
+  @keyframes despan {
+      0% {
+          right: 20px;
+          top: 0;
+          width: 100%;
+          height: 100%;
+
+      }
+      100% {
+
+        right: 45%;
+        width: 128px;
+        height: 128px;
+        align-items: center;
+      }
+  }
+  /* Add styles for the transition content (icon) */
+
+
+  /* Hide the transition container and content initially */
+
+
+  /* Style the icon within the transition content */
+  .transition-content img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 5px;
+  }
   
 
 
