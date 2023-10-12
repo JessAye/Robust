@@ -1,6 +1,8 @@
 version: '3'
 services:
   my-website:
+    build:
+      context: .
     image: nginx:latest
     container_name: my-website-container
     ports:
