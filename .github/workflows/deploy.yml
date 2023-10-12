@@ -27,7 +27,7 @@ jobs:
           # Update your GitHub repository on the EC2 instance
           git fetch
           git reset --hard
-          git checkout origin/Sprint_1_Dev
+          git checkout origin/Sprint_2_Dev
 
           # Use Docker Compose to manage your website container
           sudo docker-compose -f docker-compose.yml up -d --build
