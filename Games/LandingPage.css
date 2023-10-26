@@ -118,8 +118,9 @@ h1 {
 }
 
 .login {
-    display: flex;
-    float: right
+     display: flex;
+     float: right;
+     color: #FFC72C;
 }
 .login:visited {
   color: #FFC72C;
