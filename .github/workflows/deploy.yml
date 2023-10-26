@@ -3,7 +3,7 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - Sprint_2_Product
+      - Sprint_3_Dev # This needs to be changed depending on which branch you are deploying
 
 jobs:
   deploy:
@@ -27,7 +27,7 @@ jobs:
           # Update your GitHub repository on the EC2 instance
           git fetch
           git reset --hard
-          git checkout origin/Sprint_2_Product
+          git checkout origin/Sprint_3_Dev # This needs to be changed depending on which branch you are deploying
 
           # Use Docker Compose to manage your website container
           sudo docker-compose -f docker-compose.yml up -d --build
