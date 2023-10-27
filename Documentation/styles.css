@@ -1,38 +1,44 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    display: flex;
 }
 
 #side-panel {
+    width: 25%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
     position: fixed;
     top: 0;
-    left: -250px;
-    width: 250px;
+    left: 0;
     height: 100%;
-    background-color: #333;
-    color: #fff;
-    transition: left 0.3s;
-    z-index: 1;
+    overflow-y: auto;
+    margin-right: 20px; /* Add a margin to create space between side panel and content */
 }
 
-#open-button {
-    background-color: #333;
+#pdf-list {
+    list-style: none;
+    padding: 0;
+}
+
+#pdf-list li {
+    margin-bottom: 10px;
+}
+
+#pdf-list a {
     color: #fff;
-    border: none;
-    padding: 10px;
+    text-decoration: none;
     cursor: pointer;
 }
 
-#content {
+#main-content {
+    width: 75%;
     padding: 20px;
+    margin-left: 30%;
 }
 
-#content p {
-    font-size: 16px;
-}
-
-.opened {
-    left: 0;
+#pdf-container {
+    display: all;
 }
