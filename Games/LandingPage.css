@@ -117,3 +117,15 @@ h1 {
     text-align: center;
 }
 
+.login {
+     display: flex;
+     float: right;
+     color: #FFC72C;
+}
+.login:visited {
+  color: #FFC72C;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+
