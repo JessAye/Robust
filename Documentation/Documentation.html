@@ -3,30 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Storage</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Robust Docs</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">  
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style>      
 </head>
-<body>
-    <div id="side-panel">
-        <h2>PDFs</h2>
-        <ul id="pdf-list">
-            <li><a onclick="loadPDF('Paddle_Ball_Game_Code_Documentation.pdf')">Document 1</a></li>
-            <li><a onclick="loadPDF('Cosmic_Clash_Game_Documentation.pdf')">Document 2</a></li>
-            <!-- Add more PDF links as needed -->
-        </ul>
-    </div>
-    <div id="main-content">
-        <h1>Documentation</h1>
-        <div id="pdf-container">
-            <!-- PDF will be displayed here -->
+<header>
+    <h1>Robust Docs</h1>
+</header>
+<body>    
+    <div class="content-frame">   
+        <button id="panel-button">&#9776;</button>     
+        <div id="side-panel" class="collapsed">            
+            <h2>PDFs</h2>
+            <ul id="pdf-list">
+                <li><a onclick="loadPDF('Paddle_Ball_Game_Code_Documentation.pdf')">Paddle Ball</a></li>
+                <li><a onclick="loadPDF('Cosmic_Clash_Game_Documentation.pdf')">Cosmic Clash</a></li>
+                <!-- Add more PDF links as needed -->
+            </ul>            
+    </div>       
+        <div id="main-content">
+            <h1>Documentation</h1>            
+            <div id="pdf-container">
+                <!-- PDF will be displayed here -->
+            </div>
         </div>
-    </div>
-
-    <script>
-        function loadPDF(pdfURL) {
-            const pdfContainer = document.getElementById('pdf-container');
-            pdfContainer.innerHTML = `<iframe src="${pdfURL}" width="100%" height="500"></iframe>`;
-        }
-    </script>
+    </div>    
 </body>
+<footer>
+    <p>&copy; Robust Games <span id="current-year"></span></p>
+</footer>    
+<script src="Doc.js"></script>
 </html>
+

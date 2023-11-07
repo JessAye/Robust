@@ -1,0 +1,19 @@
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px; /* bottom, left, and transform keep the button centered on the page */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 999; /* Keeps the button in front of all other elements*/
+    padding: 5px;
+    font-family: "Press Start 2P";
+    text-align: center;
+    font-size: 18px;
+    word-spacing: -10px;
+    background-color: #003366bc; /* ETSU colors */
+    color: #FFD700;
+    border-width: 2px;
+    border-radius: 1px;
+    border-color: #FFD700;
+    cursor: pointer;
+}
