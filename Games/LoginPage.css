@@ -59,10 +59,6 @@ input{
     text-align:left !important;
 }
 
-
-
-
-
 body, html {
   height: 100%;
 }
@@ -75,5 +71,5 @@ body {
 .flip-container {
   perspective: 1000px;
 }
-
+}
 /* credit for code: Carla Sartori on codepen: https://codepen.io/carlasartori/pen/Mwxxgj  */

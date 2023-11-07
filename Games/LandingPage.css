@@ -14,6 +14,17 @@ header {
     text-align: center;
 }
 
+footer {
+    font-family: "Press Start 2P";
+    background-color: #003366;
+    color: #FFD700;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: -10px;
+    
+  }
+
 h1 {
     font-size: 36px;
 }
@@ -128,4 +139,34 @@ h1 {
   text-decoration: none;
 }
 
+/*NavBar*/
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #003366;
+  }
+  
+  ul.topnav li {float: left;}
+  
+  ul.topnav li a {
+    display: block;
+    color: #FFC72C;
+    text-align: center;
+    padding: 1px 16px;
+    text-decoration: none;
+  }
+  
+  ul.topnav li a:hover:not(.active) {background-color: #2A2727;}
+  
+  ul.topnav li a.active {background-color: #7e7e7e;}
+  
+  ul.topnav li.right {float: right;}
+  
+  @media screen and (max-width: 600px) {
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+  }
 
+  
