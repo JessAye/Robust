@@ -337,7 +337,38 @@ button:focus {
   padding: 10px;
   box-shadow: inset 4px 0 rgba(255, 255, 255, 0.7), inset -4px 0 rgba(0, 0, 0, 0.2);
   margin: 0px 5px;
-} 
+}
+
+/*NavBar CSS*/
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #003366;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: #FFC72C;
+  text-align: center;
+  padding: 1px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #2A2727;}
+
+ul.topnav li a.active {background-color: #7e7e7e;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+
 /*
 .transition-container {
   top: 0;
