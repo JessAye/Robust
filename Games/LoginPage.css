@@ -23,7 +23,7 @@ body {
 
 .front, .back {
   position: absolute;
-    padding:10px 30px;
+    padding:30px 30px;
   top: 0;
   left: 0;
   right: 0;
