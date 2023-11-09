@@ -53,16 +53,7 @@
     <!-- These Link to your game pages change the name of the game1,2,3,etc. to your games gameshtml page, the default icon is just a default icon in the images folder, change it to what your icon should be -->
 </div>
 
-<script>
-    function expandAndRedirect(link, event) {
-        event.preventDefault(); // Prevent the default link behavior
-        link.classList.add('clicked');
-        setTimeout(function () {
-            // Redirect to another page after the animation finishes
-            window.location.href = link.getAttribute('href');
-        }, 2000); //timeout duration in milliseconds
-    }
-</script>
+
     <footer>
         <p>&copy; 2023 Game Website </p>
     </footer>
