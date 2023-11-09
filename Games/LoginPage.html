@@ -16,22 +16,22 @@
                 <input type="email" id="email" name="email" required placeholder="email@etsu.edu">
                 <input type="button" id="request-otp" href="#" onclick="flipCard()" value="Generate One-time Password →">
             </form>
-
+            <div id="error-message" style="color: red; display: none;">Only @etsu.edu email addresses are allowed.</div>
             <br><br>
-            <a href="LandingPage.html"> &#8810; Back to Games</a>
+            <a href="LandingPage.html" class="backButton"> &#8810; Back to Games</a>
         </div>
 
         <div class="back">
             <h1 class="title">Register</h1>
             <form>
-                <label for="otp">Enter your one time Password:</label>
+                <label for="otp">Enter your one-time Password:</label>
                 <input type="text" id="otp" name="otp" required>
             </form>
-            <input type = button id="verify-otp" value="One-Time Login">
-            <a class="flipbutton" id="regeneratePass" href="#" onclick="flipCard()">Regenerate One Time Password</a>
+            <input type="button" id="verify-otp" value="One-Time Login">
+            <a class="flipbutton" id="regeneratePass" href="#" onclick="flipCard()">Regenerate One-Time Password</a>
 
-            <br><br><br>
-            <a href="LandingPage.html"> &#8810; Back to Games</a>
+            <br><br>
+            <a href="LandingPage.html" class="backButton"> &#8810; Back to Games</a>
         </div>
     </div>
 </div>

@@ -72,4 +72,7 @@ body {
   perspective: 1000px;
 }
 }
+.backButton{
+ position: absolute;
+}
 /* credit for code: Carla Sartori on codepen: https://codepen.io/carlasartori/pen/Mwxxgj  */
