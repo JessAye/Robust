@@ -20,15 +20,17 @@ h1 {
     font-size: 36px;
 }
 
-footer{    
+footer {
     font-family: "Press Start 2P";
     background-color: #003366;
     color: #FFD700;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
     position: relative;
     bottom: -10px;
-    width: 100%;
-    text-align: center;
-}
+    
+  }
 
 .content-frame {
     max-width: 1200px;
