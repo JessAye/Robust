@@ -7,6 +7,7 @@ body {
 .flip-container {
   perspective: 1000px;
 }
+
 .flipper {
   padding: 30px;
   width: 300px;
@@ -39,9 +40,11 @@ body {
 .back{
     transform: rotateY(180deg);
 }
+
 .flip{
     transform: rotateY(180deg);
 }
+
 input{
     width:100%;
     margin-bottom:15px;
@@ -53,6 +56,7 @@ input{
 .title{
   text-align: center;
 }
+
 .flipbutton{
     color:#4096ee;
     text-decoration:none;
@@ -72,6 +76,7 @@ body {
   perspective: 1000px;
 }
 }
+
 .backButton{
  position: absolute;
 }
