@@ -13,11 +13,6 @@ header {
     color: #FFD700;
     padding: 20px 0;
     text-align: center;
-    position: relative;
-}
-
-h1 {
-    font-size: 36px;
 }
 
 footer {
@@ -30,6 +25,28 @@ footer {
     position: relative;
     bottom: -10px;
   }
+
+  h1 {
+    font-size: 36px;
+}
+
+/* Apply styles to the overall container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(20% - 20px), 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Adjust the layout for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}
 
 .content-frame {
     max-width: 1200px;
@@ -73,9 +90,6 @@ footer {
     padding: 20px;
 }
 
-h1 {
-    font-size: 24px;
-}
 
 #pdf-container {
     width: 100%;
