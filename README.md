@@ -29,8 +29,6 @@ o    The feature is supported on desktops and mobile devices.
 o    The code is reviewed by at least one other member.
 o    Feedback on the code is addressed. 
 o    PO approval.
-o    Feature branch is approved by the Scrum team before merging.
-o    Feature branch is merged into the development branch.
 o    Integration testing.
 o    Deploy to staging environment for final testing, validation, and verification. 
 o    Review all the DoD criteria as a team.
