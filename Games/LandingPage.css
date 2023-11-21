@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* Style for the header */
 header {
     font-family: "Press Start 2P";
     background-color: #003366;
@@ -14,6 +15,7 @@ header {
     text-align: center;
 }
 
+/* Style for the footer */
 footer {
     font-family: "Press Start 2P";
     background-color: #003366;
@@ -22,9 +24,9 @@ footer {
     width: 100%;
     position: absolute;
     bottom: -10px;
-    
-  }
+}
 
+/* Style for the main heading */
 h1 {
     font-size: 36px;
 }
@@ -40,7 +42,7 @@ h1 {
     justify-content: center;
 }
 
-/* Add some basic styling to the game links */
+/* Add styling to the game links */
 .game-link {
     text-align: center;
     text-decoration: none;
@@ -52,21 +54,21 @@ h1 {
     overflow: hidden; /* Hide overflowing content */
 }
 
-/* Style the icons */
+/* Style for the icons inside game links */
 .game-link img {
     width: 64px; /* Adjust the width and height as needed */
     height: 64px;
     margin-bottom: 5px; /* Add some spacing between the icon and text */
 }
 
-/* Add a hover effect */
+/* Add a hover effect to game links */
 .game-link:hover {
     /*background-color: #003366;*/ /* Change the background color on hover */
     border-radius: 5px; /* Add rounded corners */
     animation: bounce 1s ease-in-out infinite alternate;
 }
 
-/*Bouncy Icon effect*/
+/* Bouncy Icon effect */
 @keyframes bounce{
     0%{
         transform: translateY(0);
@@ -76,7 +78,7 @@ h1 {
     }
 }
 
-/* Hover effect without background color change */
+/* Hover effect without background color change for non-clicked game links */
 .game-link:not(.clicked):hover {
     background-color: #003366;
 }
@@ -96,50 +98,63 @@ h1 {
     border: 2px solid #666; /* Border for the placeholder */
 }
 
-/* Style the game name */
+/* Style for the game name */
 .game-name {
     font-size: 16px; /* Adjust the font size as needed */
     margin-top: 5px; /* Add space between the icon and game name */
     text-align: center;
 }
 
+/* Style for the login section */
 .login {
-     display: flex;
-     float: right;
-     color: #FFC72C;
-}
-.login:visited {
-  color: #FFC72C;
-  background-color: transparent;
-  text-decoration: none;
+    display: flex;
+    float: right;
+    color: #FFC72C;
 }
 
-/*NavBar*/
+/* Styling for visited links in the login section */
+.login:visited {
+    color: #FFC72C;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* Style for the navigation bar */
 ul.topnav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #003366;
-  }
-  
-  ul.topnav li {float: left;}
-  
-  ul.topnav li a {
+}
+
+/* Style for the list items in the navigation bar */
+ul.topnav li {float: left;}
+
+/* Style for the links in the navigation bar */
+ul.topnav li a {
     display: block;
     color: #FFC72C;
     text-align: center;
     padding: 1px 16px;
     text-decoration: none;
-  }
-  
-  ul.topnav li a:hover:not(.active) {background-color: #2A2727;}
-  
-  ul.topnav li a.active {background-color: #7e7e7e;}
-  
-  ul.topnav li.right {float: right;}
-  
-  @media screen and (max-width: 600px) {
+}
+
+/* Hover effect for links in the navigation bar */
+ul.topnav li a:hover:not(.active) {
+    background-color: #2A2727;
+}
+
+/* Style for the active link in the navigation bar */
+ul.topnav li a.active {
+    background-color: #7e7e7e;
+}
+
+/* Aligning items to the right in the navigation bar */
+ul.topnav li.right {float: right;}
+
+/* Media query for screens with a maximum width of 600px */
+@media screen and (max-width: 600px) {
     ul.topnav li.right, 
     ul.topnav li {float: none;}
-  }
+}
