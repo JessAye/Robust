@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Robust Games - Online Arcade</title>
+    <link rel="stylesheet" type="text/css" href="PaddleBall.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  </style>
+  </head>
+  <body>
+    <!-------------------Header------------------>
+    <header>
+      <h1>Paddle Ball</h1>
+    <!--NavBar-->
+    <ul class="topnav">
+        <li><a href="LandingPage.html"><h2>Home</h2></a></li>
+        <li><a href="../Documentation/Documentation.html"><h2>Documentation</h2></a></li>
+        <li ><a href="../Documentation/AboutUs.html"><h2>About</h2></a></li>
+        <li class ="right"><a href="LoginPage.html" class="login"><h2 >Login</h2></a>
+      </ul>
+    </header>
+    
+    <!-------------------Main------------------>
+    <main class="gameboy">
+      <div class="gameboy-body">
+          <div class="gameboy-header"></div>
+          <section class="screen">
+          <div id="startMenu">
+            <h1>Paddle Ball</h1>
+            <button id="startButton">Start Game</button>
+          </div>
+          <canvas id="gameCanvas"></canvas>
+          <div id="endMenu">
+            <h1>Game Over</h1>
+            <p>Player Score: <span id="finalPlayerScore">0</span></p>
+            <p>Computer Score: <span id="finalAiPlayerScore">0</span></p>
+            <button id="playAgainButton">Play Again</button>
+          </div>
+          </section>
+          <section class="actions">
+              <!-- Directional buttons -->
+              <div id="directions">
+                  <button id="arrow-left"></button>
+                  <button id="arrow-top"></button>
+                  <button id="arrow-right"></button>
+                  <button id="arrow-bottom"></button>
+              </div>
+              <!-- Shoot button -->
+              <div id="buttons">
+                  <button id="button-a"></button>
+              </div>
+          </section>
+      </div>
+
+      <section class ="description">
+          <h2>Game Description</h2>
+          <p>
+            Paddle is a classic arcade game in which you need to the paddle to hit the ball and defeat the opponent.
+          </p>
+      </section>
+
+      <section class =" instructions">
+          <h2>How to Play</h2>
+          <ul>
+            <li>
+                On desktop: Press up and down arrows key to move paddle.
+            </li>
+            <li>
+                On mobile: Press up and down on the directional pad to move paddle.
+            </li>
+          </ul>
+      </section>
+    </main>
+
+    <!-------------------Footer------------------>
+    <footer>
+      <p>&copy; 2023 Game Website </p>
+    </footer>
+    
+    <script src="PaddleBall.js"></script>
+  </body>
+</html>
