@@ -19,11 +19,10 @@ Date Last Modified:
 
 */
 
---------------------------------------------------------------------------------------
-****************************** Definition of Done ************************************
---------------------------------------------------------------------------------------
+
+*** Definition of Done ***
+
 o    All code for the user story/task has been written.
-o    The code has passed all unit tests.
 o    The code has met the acceptance criteria.
 o    The code is commented. 
 o    The feature is supported on desktops and mobile devices.
