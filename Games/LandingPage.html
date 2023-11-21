@@ -5,55 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robust Arcade</title>
     <link rel="stylesheet" href="LandingPage.css">
+    <!-- Importing the Press Start 2P font from Google Fonts -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
     </style>
 </head>
 <body>
 <header>
+    <!-- Header with the title "Robust Arcade" -->
     <h1>Robust Arcade</h1>
-    <!--NavBar-->
+    <!-- Navigation Bar -->
     <ul class="topnav">
+        <!-- Home link with active class indicating the current page -->
         <li><a class="active" href="LandingPage.html"><h2>Home</h2></a></li>
+        <!-- Documentation link -->
         <li><a href="../Documentation/Documentation.html"><h2>Documentation</h2></a></li>
-        <li ><a href="../Documentation/AboutUs.html"><h2>About</h2></a></li>
-        <li class ="right"><a href="LoginPage.html" class="login"><h2 >Login</h2></a>
-      </ul>
+        <!-- About Us link -->
+        <li><a href="../Documentation/AboutUs.html"><h2>About</h2></a></li>
+        <!-- Login link aligned to the right side of the navigation bar -->
+        <li class="right"><a href="LoginPage.html" class="login"><h2>Login</h2></a></li>
+    </ul>
 </header>
+<!-- Container for game links -->
 <div class="container">
+    <!-- Game Link 1 - Cosmic Clash -->
     <a class="game-link" href="SpaceInvaders.html" title="Cosmic Clash" onclick="expandAndRedirect(this, event)">
         <img src="Images/alienGreen.png" alt="Cosmic Clash">
         <div class="game-name">Cosmic Clash</div>
     </a>
+    <!-- Game Link 2 - Paddle and Ball -->
     <a class="game-link" href="PaddleBall.html" title="PaddleAndBall" onclick="expandAndRedirect(this, event)">
         <img src="Images/paddleball.png" alt="PaddleAndBall">
         <div class="game-name">Paddle and Ball</div>
     </a>
-    <a class="game-link" href="under_construction.html" title="Under Construction"onclick="expandAndRedirect(this, event)">
+    <!-- Game Link 3 - Under Construction -->
+    <a class="game-link" href="under_construction.html" title="Under Construction" onclick="expandAndRedirect(this, event)">
         <img src="Images/default_icon.png" alt="Under Construction">
         <div class="game-name">Game 3</div>
     </a>
-    <a class="game-link" href="under_construction.html" title="Under Construction"onclick="expandAndRedirect(this, event)">
-        <img src="Images/default_icon.png" alt="Under Construction">
-        <div class="game-name">Game 4</div>
-    </a>
-    <a class="game-link" href="under_construction.html" title="Under Construction"onclick="expandAndRedirect(this, event)">
-        <img src="Images/default_icon.png" alt="Under Construction">
-        <div class="game-name">Game 5</div>
-    </a>
-    <a class="game-link" href="under_construction.html" title="Under Construction"onclick="expandAndRedirect(this, event)">
-        <img src="Images/default_icon.png" alt="Under Construction">
-        <div class="game-name">Game 6</div>
-    </a>
-    <a class="game-link" href="under_construction.html" title="Under Construction"onclick="expandAndRedirect(this, event)">
-        <img src="Images/default_icon.png" alt="Under Construction">
-        <div class="game-name">Game 7</div>
-    </a>
-    <!-- Add more game links as needed -->
-    <!-- These Link to your game pages change the name of the game1,2,3,etc. to your games gameshtml page, the default icon is just a default icon in the images folder, change it to what your icon should be -->
+    <!-- Repeat the pattern for more game links -->
 </div>
-    <footer>
-        <p>&copy; Robust Games 2023 </p>
-    </footer>
+<!-- Footer with the copyright information -->
+<footer>
+    <p>&copy; Robust Games 2023 </p>
+</footer>
 </body>
 </html>
