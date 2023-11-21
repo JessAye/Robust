@@ -21,7 +21,6 @@ Date Last Modified:
 
 
 *** Definition of Done ***
-
 o    All code for the user story/task has been written.
 o    The code has met the acceptance criteria.
 o    The code is commented. 
@@ -32,22 +31,3 @@ o    PO approval.
 o    Integration testing.
 o    Deploy to staging environment for final testing, validation, and verification. 
 o    Review all the DoD criteria as a team.
---------------------------------------------------------------------------------------
-
-Ignore the extra newlines
-# Robust
-
---------------------------------------------------------------------------------------
-******************************** Feature updates *************************************
---------------------------------------------------------------------------------------
-[A quick list of updates tweaks and changes go here]
-
-
-
-
---------------------------------------------------------------------------------------
-******************************* Feature Analysis *************************************
---------------------------------------------------------------------------------------
-[Your Description of your feature and what it does/how it works goes here]
-
-change
