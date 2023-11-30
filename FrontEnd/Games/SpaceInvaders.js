@@ -80,14 +80,14 @@ window.onload = function() {
     //load images for game
     //ship
     shipImg = new Image();
-    shipImg.src = "./Games/Images/ship.png";
+    shipImg.src = "../Games/Images/ship.png";
     shipImg.onload = function() {
         context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     }
 
     //alien
     alienImg = new Image();
-    alienImg.src = "./Games/Images/alienGreen.png";
+    alienImg.src = "../Games/Images/alienGreen.png";
     createAliens();
 
     // Function to start the game
