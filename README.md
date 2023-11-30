@@ -1,3 +1,5 @@
+**IMPORTANT the One Time Passwork (OTP) does not work on ESTU-Guest as it has a email spam filter that will NOT allow Emails to be sent SMTP
+
 Documentation:
 The Documentation file is used to document anything in a program/project that has specific formatting, and coding requirements (special library dependencies/API/other source information, commenting style, etc.), and to give a general overview of the functions added to the code so if the project is picked up by another team they understand what the functions do and how they work together to create a system or subsystem. The documentation file should also contain the Vision and a list of changes added to the program to achieve that vision(When you add a feature document there is a section below for you to do so)
 
