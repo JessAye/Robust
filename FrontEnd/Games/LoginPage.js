@@ -52,7 +52,7 @@ function verifyOTP() {
 			// Store the token in localStorage
       			localStorage.setItem('token', tokenData.token);
 			// Redirect to LandingPage.html
-      			window.location.href = 'LandingPage.html';
+      			window.location.href = '../Games/LandingPage.html';
     		})
     		.catch((error) => {
       			alert('Error: ' + error);
