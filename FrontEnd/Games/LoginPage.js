@@ -28,7 +28,7 @@ verifyOTPButton.addEventListener('click', verifyOTP);
 function requestOTP() {
   const email = emailInput.value;
   // Make an API request to your /generateOTP endpoint
-  fetch(`http://3.230.230.113:3000/generateOTP?email=${email}`)
+  fetch(`http://52.54.173.132:3000/generateOTP?email=${email}`)
     .then((response) => response.text())
     .then((data) => {
       alert(data); // Display the API response to the user
@@ -39,14 +39,14 @@ function verifyOTP() {
   const email = emailInput.value;
   const enteredOTP = otpInput.value;
 
-  fetch(`http://3.230.230.113:3000/verifyOTP?email=${email}&otp=${enteredOTP}`)
+  fetch(`http://52.54.173.132:3000/verifyOTP?email=${email}&otp=${enteredOTP}`)
     .then((response) => response.text())
     .then((data) => {
       if (data === 'OTP verified successfully.') {
         // OTP is verified successfully
 
         // Make an API request to retrieve the user's email
-        fetch(`http://3.230.230.113:3000/sendToken?email=${email}`)
+        fetch(`http://52.54.173.132:3000/sendToken?email=${email}`)
     		.then((response) => response.json())
     		.then((tokenData) => {
 			// Store the token in localStorage
